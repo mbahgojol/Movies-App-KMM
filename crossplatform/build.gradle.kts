@@ -1,45 +1,30 @@
+@file:Suppress("unused", "UNUSED_VARIABLE")
+
+import com.mbahgojol.convention.commonMain
+import com.mbahgojol.convention.commonTest
+
 plugins {
-    kotlin("multiplatform")
+    id("mbahgojol.kotlin.multiplatform")
     kotlin("native.cocoapods")
     id("mbahgojol.android.library")
+    alias(libs.plugins.realm) apply false
+    alias(libs.plugins.ksp)
 }
 
-@OptIn(org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi::class)
 kotlin {
-    targetHierarchy.default()
+    commonMain {
+        dependencies {
+            implementation(libs.realm.base)
+            implementation(libs.realm.sync)
 
-    android {
-        compilations.all {
-            kotlinOptions {
-                jvmTarget = JavaVersion.VERSION_17.toString()
-            }
-        }
-    }
-    iosX64()
-    iosArm64()
-    iosSimulatorArm64()
-
-    cocoapods {
-        summary = "Some description for the Shared Module"
-        homepage = "Link to the Shared Module homepage"
-        version = "1.0"
-        ios.deploymentTarget = "14.1"
-        podfile = project.file("../iosApp/Podfile")
-        framework {
-            baseName = "crossplatform"
+            implementation(libs.kotlin.coroutines.core)
+            api(libs.kotlininject.runtime)
         }
     }
 
-    sourceSets {
-        val commonMain by getting {
-            dependencies {
-                //put your multiplatform dependencies here
-            }
-        }
-        val commonTest by getting {
-            dependencies {
-                implementation(kotlin("test"))
-            }
+    commonTest {
+        dependencies {
+            implementation(kotlin("test"))
         }
     }
 }
@@ -51,3 +36,9 @@ android {
         minSdk = 24
     }
 }
+
+ksp {
+    arg("me.tatarka.inject.generateCompanionExtensions", "true")
+}
+
+//addKspDependencyForAllTargets(libs.kotlininject.compiler)
