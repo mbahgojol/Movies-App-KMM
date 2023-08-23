@@ -1,0 +1,59 @@
+*.iml
+.gradle
+.idea/sonarlint
+/local.properties
+/.idea/caches
+/.idea/sonarlint
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+
+# built application files
+*.apk
+*.ap_
+
+# files for the dex VM
+*.dex
+
+# Java class files
+*.class
+
+# generated files
+bin/
+gen/
+out/
+build/
+
+# Eclipse project files
+.classpath
+.project
+
+# IDEA/Android Studio project files, because
+# the project can be imported from settings.gradle.kts
+.idea/*
+!.idea/copyright
+# Keep the code styles.
+!/.idea/codeStyles
+/.idea/codeStyles/*
+!/.idea/codeStyles/Project.xml
+!/.idea/codeStyles/codeStyleConfig.xml
+
+# Sandbox stuff
+_sandbox
+
+# Android Studio captures folder
+captures/
+
+app/src/dev/google-services.json
+app/src/prod/google-services.json
+app/src/stg/google-services.json
+*/google-services.json
+*.jks
