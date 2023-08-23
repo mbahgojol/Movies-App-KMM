@@ -3,10 +3,6 @@ plugins {
     id("mbahgojol.kotlin.android")
     id("mbahgojol.android.application.compose")
     id("mbahgojol.android.application.flavors")
-    id("mbahgojol.android.application.jacoco")
-    id("mbahgojol.android.hilt")
-//    id("mbahgojol.android.test")
-    id("mbahgojol.android.application.firebase")
 }
 
 android {
@@ -18,17 +14,11 @@ android {
 
     defaultConfig {
         applicationId = "com.mbahgojol.cleanarchitecture"
-        versionCode = 1
-        versionName = "1.0"
     }
 }
 
 dependencies {
-    implementation(projects.core.designsystem)
-    implementation(projects.feature.home)
-    implementation(projects.core.common)
-
-    implementation(libs.timber)
+    implementation(projects.crossplatform)
     implementation(libs.androidx.navigation.runtime.ktx)
     implementation(libs.androidx.navigation.compose)
 

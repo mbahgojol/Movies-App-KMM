@@ -1,61 +1,49 @@
 [versions]
-androidMinSdk = "21"
+agp = "8.0.2"
+androidMinSdk = "24"
 androidCompileSdk = "34"
 androidTargetSdk = "34"
-
-versionCode = "1"
-versionName = "1.0"
-
-jacoco = "0.8.7"
-agp = "8.0.2"
+androidxNavigation = "2.7.0"
+androidxHiltNavigationCompose = "1.0.0"
+androidxConstraintlayoutCompose = "1.0.1"
+androidxCompose = "1.2.1"
 androidxlifecycle = "2.6.1"
 androidxactivity = "1.7.2"
-ksp = "1.9.0-1.0.11"
-
-firebaseCrashlyticsPlugin = "2.9.8"
-firebasePerfPlugin = "1.4.2"
-firebaseBom = "32.2.2"
-
 chucker = "3.5.2"
+circuit = "0.12.1"
 coil = "2.4.0"
-
 compose = "1.4.1"
 compose-bom = "2023.08.00"
 composecompiler = "1.5.1"
 compose-multiplatform = "1.5.0-beta01"
-
 coroutines = "1.7.1"
 debugdrawer = "0.9.8"
-
-kotlin = "1.9.0"
-kotlininject = "0.6.1"
-ktlint = "0.49.1"
-
-moko-resources = "0.23.0"
-
-kermit = "1.2.2" # Pinned back as Store uses Kermit 1.x
-okhttp = "4.11.0"
-retrofit = "2.9.0"
-ktor = "2.3.1"
-
-paging-multiplatform = "3.2.0-alpha05-0.2.2"
-paging = "3.2.0"
-
-androidxHiltNavigationCompose = "1.0.0"
-androidxConstraintlayoutCompose = "1.0.1"
-
+firebaseCrashlyticsPlugin = "2.9.8"
+firebasePerfPlugin = "1.4.2"
+firebaseBom = "32.2.2"
+gson = "2.9.1"
 googleMaterial = "1.6.1"
-androidxCompose = "1.2.1"
-
 hilt = "2.47"
 hiltExt = "1.0.0"
-
-androidxNavigation = "2.7.0"
-
-gson = "2.9.1"
+jacoco = "0.8.7"
+kermit = "1.2.2" # Pinned back as Store uses Kermit 1.x
+ksp = "1.9.0-1.0.13"
+kotlin = "1.8.21"
+kotlininject = "0.6.1"
+ktor = "2.3.1"
+ktlint = "0.49.1"
+moko-resources = "0.23.0"
+okhttp = "4.11.0"
+paging-multiplatform = "3.2.0-alpha05-0.2.2"
+paging = "3.2.0"
+retrofit = "2.9.0"
 room = "2.5.2"
-
+realm = "1.10.0"
 secrets = "2.0.1"
+spotless = "6.20.0"
+sqldelight = "2.0.0"
+versionCode = "1"
+versionName = "1.0"
 
 [libraries]
 # android
@@ -142,20 +130,19 @@ debugdrawer-debugdrawer = { module = "au.com.gridstone.debugdrawer:debugdrawer",
 debugdrawer-timber = { module = "au.com.gridstone.debugdrawer:debugdrawer-timber", version.ref = "debugdrawer" }
 debugdrawer-okhttplogger = { module = "au.com.gridstone.debugdrawer:debugdrawer-okhttp-logger", version.ref = "debugdrawer" }
 
-# kotlin
-kotlin-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" }
-kotlin-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
-kotlin-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
-kotlin-extensions = { module = "org.jetbrains.kotlin:kotlin-android-extensions", version.ref = "kotlin" }
+# realm
+realm-base = { module = "io.realm.kotlin:library-base", version.ref = "realm" }
+realm-sync = { module = "io.realm.kotlin:library-sync", version.ref = "realm" }
 
 # kotlinx
 kotlin-bom = "org.jetbrains.kotlin:kotlin-bom:1.8.20"
-kotlinx-atomicfu = "org.jetbrains.kotlinx:atomicfu:0.20.2"
+kotlinx-atomicfu = "org.jetbrains.kotlinx:atomicfu:0.22.0"
 kotlinx-datetime = "org.jetbrains.kotlinx:kotlinx-datetime:0.4.0"
-kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" }
-kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
-kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
+kotlin-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" }
+kotlin-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
+kotlin-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
 kotlinx-coroutines-playservices = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-play-services", version.ref = "coroutines" }
+kotlin-extensions = { module = "org.jetbrains.kotlin:kotlin-android-extensions", version.ref = "kotlin" }
 
 # This isn't strictly used, but allows Renovate to see us using the ktlint artifact
 ktlint = { module = "com.pinterest:ktlint", version.ref = "ktlint" }
@@ -177,7 +164,6 @@ room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
 
 # ktor
 ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
-ktor-client-cio = { module = "io.ktor:ktor-client-cio", version.ref = "ktor" }
 ktor-client-darwin = { module = "io.ktor:ktor-client-darwin", version.ref = "ktor" }
 ktor-client-okhttp = { module = "io.ktor:ktor-client-okhttp", version.ref = "ktor" }
 ktor-client-auth = { module = "io.ktor:ktor-client-auth", version.ref = "ktor" }
@@ -185,8 +171,17 @@ ktor-client-auth = { module = "io.ktor:ktor-client-auth", version.ref = "ktor" }
 playservices-blockstore = "com.google.android.gms:play-services-auth-blockstore:16.2.0"
 robolectric = "org.robolectric:robolectric:4.10.3"
 
-timber = "com.jakewharton.timber:timber:5.0.1"
+kermit-kermit = { module = "co.touchlab:kermit", version.ref = "kermit" }
+kermit-crashlytics = { module = "co.touchlab:kermit-crashlytics", version.ref = "kermit" }
+
 turbine = "app.cash.turbine:turbine:0.13.0"
+
+circuit-foundation = { module = "com.slack.circuit:circuit-foundation", version.ref = "circuit" }
+circuit-overlay = { module = "com.slack.circuit:circuit-overlay", version.ref = "circuit" }
+circuit-runtime = { module = "com.slack.circuit:circuit-runtime", version.ref = "circuit" }
+
+kotlininject-compiler = { module = "me.tatarka.inject:kotlin-inject-compiler-ksp", version.ref = "kotlininject" }
+kotlininject-runtime = { module = "me.tatarka.inject:kotlin-inject-runtime", version.ref = "kotlininject" }
 
 # Build logic dependencies
 android-gradlePlugin = { module = "com.android.tools.build:gradle", version.ref = "agp" }
@@ -195,6 +190,7 @@ firebase-crashlytics-gradlePlugin = { module = "com.google.firebase:firebase-cra
 firebase-performance-gradlePlugin = { module = "com.google.firebase:perf-plugin", version.ref = "firebasePerfPlugin" }
 ksp-gradlePlugin = { module = "com.google.devtools.ksp:com.google.devtools.ksp.gradle.plugin", version.ref = "ksp" }
 compose-gradlePlugin = { module = "org.jetbrains.compose:compose-gradle-plugin", version.ref = "compose-multiplatform" }
+spotless-gradlePlugin = { module = "com.diffplug.spotless:spotless-plugin-gradle", version.ref = "spotless" }
 
 tools-desugarjdklibs = "com.android.tools:desugar_jdk_libs:2.0.3"
 androidx-navigation-runtime-ktx = { group = "androidx.navigation", name = "navigation-runtime-ktx", version = "androidxNavigation" }
@@ -202,20 +198,20 @@ androidx-navigation-runtime-ktx = { group = "androidx.navigation", name = "navig
 [bundles]
 compose = ["androidx-activity-compose", "compose-material3-material3", "compose-ui-ui", "compose-ui-graphics",
     "compose-ui-tooling-preview"]
-ktor = ["ktor-client-core", "ktor-client-okhttp", "ktor-client-auth", "ktor-client-cio"]
-
 
 [plugins]
+realm = { id = "io.realm.kotlin", version.ref = "realm" }
 multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 kotlin-parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "kotlin" }
 android-application = { id = "com.android.application", version.ref = "agp" }
 android-library = { id = "com.android.library", version.ref = "agp" }
-composeMultiplatform = { id = "org.jetbrains.compose", version.ref = "compose-multiplatform" }
-moko-resources = { id = "dev.icerock.mobile.multiplatform-resources", version.ref = "moko-resources" }
 android-lint = { id = "com.android.lint", version.ref = "agp" }
 android-test = { id = "com.android.test", version.ref = "agp" }
+buildConfig = "com.github.gmazzo.buildconfig:4.1.2"
+composeMultiplatform = { id = "org.jetbrains.compose", version.ref = "compose-multiplatform" }
+moko-resources = { id = "dev.icerock.mobile.multiplatform-resources", version.ref = "moko-resources" }
 cacheFixPlugin = { id = "org.gradle.android.cache-fix", version = "2.7.1" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 gms-googleServices = "com.google.gms.google-services:4.3.15"
@@ -225,3 +221,6 @@ hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 ktor = { id = "io.ktor.plugin", version.ref = "ktor" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 secrets = { id = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin", version.ref = "secrets" }
+sqldelight = { id = "app.cash.sqldelight", version.ref = "sqldelight" }
+spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
+
