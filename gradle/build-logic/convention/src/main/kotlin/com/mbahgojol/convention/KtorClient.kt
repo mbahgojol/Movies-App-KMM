@@ -9,9 +9,9 @@ internal fun Project.configureKtorClient(
 ) {
     commonExtension.apply {
         dependencies {
-            add("implementation", libs.findBundle("ktor").get())
-            add("implementation", libs.findLibrary("kotlinx.coroutines.android").get())
-            add("implementation", libs.findLibrary("kotlinx.coroutines.core").get())
+            add("implementation", libsExt.findBundle("ktor").get())
+            add("implementation", libsExt.findLibrary("kotlinx.coroutines.android").get())
+            add("implementation", libsExt.findLibrary("kotlinx.coroutines.core").get())
         }
     }
 }

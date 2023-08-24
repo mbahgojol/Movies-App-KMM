@@ -5,7 +5,7 @@ import com.mbahgojol.convention.configureAndroid
 import com.mbahgojol.convention.configureBuildTypes
 import com.mbahgojol.convention.configureDefaultConfig
 import com.mbahgojol.convention.configureFlavors
-import com.mbahgojol.convention.libs
+import com.mbahgojol.convention.libsExt
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
@@ -27,10 +27,10 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
 
                 if (!pluginManager.hasPlugin("org.jetbrains.kotlin.multiplatform")) {
                     dependencies {
-                        add("implementation", libs.findLibrary("timber").get())
-                        add("implementation", libs.findLibrary("androidx.core").get())
-                        add("implementation", libs.findLibrary("androidx.appcompat").get())
-                        add("implementation", libs.findLibrary("google.android.material").get())
+                        add("implementation", libsExt.findLibrary("timber").get())
+                        add("implementation", libsExt.findLibrary("androidx.core").get())
+                        add("implementation", libsExt.findLibrary("androidx.appcompat").get())
+                        add("implementation", libsExt.findLibrary("google.android.material").get())
                     }
                 }
             }

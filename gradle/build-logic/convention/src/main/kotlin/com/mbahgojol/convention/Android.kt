@@ -13,7 +13,7 @@ import org.gradle.kotlin.dsl.get
 
 fun Project.configureAndroid() {
     android {
-        setCompileSdkVersion(libs.compileSdkVersion)
+        setCompileSdkVersion(libsExt.compileSdkVersion)
 
         compileOptions {
             sourceCompatibility = JavaVersion.VERSION_11
@@ -24,7 +24,7 @@ fun Project.configureAndroid() {
     }
 
     dependencies {
-        "coreLibraryDesugaring"(libs.findLibrary("tools.desugarjdklibs").get())
+        "coreLibraryDesugaring"(libsExt.findLibrary("tools.desugarjdklibs").get())
     }
 }
 
@@ -89,11 +89,11 @@ internal fun Project.configureBuildTypes(extension: LibraryExtension) {
 internal fun Project.configureDefaultConfig(extension: ApplicationExtension) {
     with(extension) {
         defaultConfig {
-            minSdk = libs.minSdkVersion
-            targetSdk = libs.targetSdkVersion
+            minSdk = libsExt.minSdkVersion
+            targetSdk = libsExt.targetSdkVersion
 
-            versionCode = libs.versionCode
-            versionName = libs.versionName
+            versionCode = libsExt.versionCode
+            versionName = libsExt.versionName
 
             testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
             vectorDrawables {
@@ -106,7 +106,7 @@ internal fun Project.configureDefaultConfig(extension: ApplicationExtension) {
 internal fun Project.configureDefaultConfig(extension: LibraryExtension) {
     with(extension) {
         defaultConfig {
-            minSdk = libs.minSdkVersion
+            minSdk = libsExt.minSdkVersion
 
             testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
             consumerProguardFiles("consumer-rules.pro")

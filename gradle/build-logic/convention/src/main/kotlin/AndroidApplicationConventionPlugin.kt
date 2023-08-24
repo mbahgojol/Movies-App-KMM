@@ -4,7 +4,7 @@ import com.android.build.api.dsl.ApplicationExtension
 import com.mbahgojol.convention.configureAndroid
 import com.mbahgojol.convention.configureBuildTypes
 import com.mbahgojol.convention.configureDefaultConfig
-import com.mbahgojol.convention.libs
+import com.mbahgojol.convention.libsExt
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
@@ -24,13 +24,13 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
                 configureBuildTypes(this)
 
                 dependencies {
-                    add("implementation", platform(libs.findLibrary("kotlin.bom").get()))
-                    add("implementation", libs.findLibrary("androidx.core").get())
-                    add("implementation", libs.findLibrary("androidx.appcompat").get())
-                    add("implementation", libs.findLibrary("google.android.material").get())
+                    add("implementation", platform(libsExt.findLibrary("kotlin.bom").get()))
+                    add("implementation", libsExt.findLibrary("androidx.core").get())
+                    add("implementation", libsExt.findLibrary("androidx.appcompat").get())
+                    add("implementation", libsExt.findLibrary("google.android.material").get())
                     add(
                         "implementation",
-                        libs.findLibrary("androidx.lifecycle.runtime.ktx").get(),
+                        libsExt.findLibrary("androidx.lifecycle.runtime.ktx").get(),
                     )
                 }
             }

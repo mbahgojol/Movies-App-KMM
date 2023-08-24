@@ -27,7 +27,7 @@ class KotlinMultiplatformConventionPlugin : Plugin<Project> {
             android {
                 compilations.all {
                     kotlinOptions {
-                        jvmTarget = JavaVersion.VERSION_17.toString()
+                        jvmTarget = JavaVersion.VERSION_11.toString()
                     }
                 }
             }
@@ -41,7 +41,7 @@ class KotlinMultiplatformConventionPlugin : Plugin<Project> {
                 homepage = "Link to the Shared Module homepage"
                 version = "1.0"
                 ios.deploymentTarget = "14.1"
-                podfile = project.file("../iosApp/Podfile")
+                this.podfile = project.file("../iosApp/Podfile")
                 framework {
                     baseName = "crossplatform"
                 }
