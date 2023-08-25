@@ -6,30 +6,30 @@ import androidx.activity.compose.setContent
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import me.tatarka.inject.annotations.Component
+import me.tatarka.inject.annotations.Inject
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val component = MainActivityComponent::class.create()
         setContent {
             MaterialTheme {
-                Greeting(name = "Smart")
+                component.home()
             }
         }
     }
 }
 
+typealias Home = @Composable () -> Unit
+
+@Inject
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier,
-    )
+fun Home() {
+    Text(text = "MbahGojol")
 }
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    Greeting(name = "Smart")
+@Component
+abstract class MainActivityComponent {
+    abstract val home: Home
 }

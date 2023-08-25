@@ -3,6 +3,7 @@ plugins {
     id("mbahgojol.kotlin.android")
     id("mbahgojol.android.application.compose")
     id("mbahgojol.android.application.flavors")
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -21,6 +22,8 @@ dependencies {
     implementation(projects.crossplatform)
     implementation(libs.androidx.navigation.runtime.ktx)
     implementation(libs.androidx.navigation.compose)
+    implementation(libs.kotlininject.runtime)
+    ksp(libs.kotlininject.compiler)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.junit)
