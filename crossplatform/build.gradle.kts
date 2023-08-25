@@ -44,4 +44,4 @@ ksp {
     arg("me.tatarka.inject.generateCompanionExtensions", "true")
 }
 
-//addKspDependencyForAllTargets(libs.kotlininject.compiler)
+addKspDependencyForAllTargets(libs.kotlininject.compiler)

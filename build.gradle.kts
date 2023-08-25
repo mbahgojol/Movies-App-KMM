@@ -5,6 +5,7 @@ plugins {
     alias(libs.plugins.multiplatform) apply false
     alias(libs.plugins.cacheFixPlugin) apply false
     alias(libs.plugins.kotlin.parcelize) apply false
+    alias(libs.plugins.kotlin.jvm) apply false
     alias(libs.plugins.ksp) apply false
 }
 
