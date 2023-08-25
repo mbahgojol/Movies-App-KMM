@@ -2,9 +2,6 @@
 
 import com.mbahgojol.convention.commonMain
 import com.mbahgojol.convention.commonTest
-import com.mbahgojol.convention.compileSdkVersion
-import com.mbahgojol.convention.libsExt
-import com.mbahgojol.convention.minSdkVersion
 
 plugins {
     id("mbahgojol.kotlin.multiplatform")
@@ -34,10 +31,6 @@ kotlin {
 
 android {
     namespace = "com.mbahgojol.crossplatform"
-    compileSdk = libsExt.compileSdkVersion
-    defaultConfig {
-        minSdk = libsExt.minSdkVersion
-    }
 }
 
 ksp {
