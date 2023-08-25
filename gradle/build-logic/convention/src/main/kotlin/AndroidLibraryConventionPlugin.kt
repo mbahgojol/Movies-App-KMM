@@ -27,7 +27,6 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
 
                 if (!pluginManager.hasPlugin("org.jetbrains.kotlin.multiplatform")) {
                     dependencies {
-                        add("implementation", libsExt.findLibrary("timber").get())
                         add("implementation", libsExt.findLibrary("androidx.core").get())
                         add("implementation", libsExt.findLibrary("androidx.appcompat").get())
                         add("implementation", libsExt.findLibrary("google.android.material").get())
