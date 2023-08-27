@@ -24,8 +24,8 @@ kotlin {
 
     commonMain {
         dependencies {
-//            api(projects.shared.base)
-//            api(projects.shared.models)
+            api(projects.shared.base)
+            api(projects.shared.models)
             api(projects.core)
         }
     }
