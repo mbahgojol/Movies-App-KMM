@@ -1,3 +1,5 @@
+@file:Suppress("UnstableApiUsage")
+
 plugins {
     id("mbahgojol.android.application")
     id("mbahgojol.kotlin.android")
@@ -7,14 +9,21 @@ plugins {
 }
 
 android {
+    namespace = "com.mbahgojol.movies"
+
+    defaultConfig {
+        applicationId = "com.mbahgojol.movies"
+    }
+
     buildFeatures {
         buildConfig = true
     }
 
-    namespace = "com.mbahgojol.cleanarchitecture"
-
-    defaultConfig {
-        applicationId = "com.mbahgojol.cleanarchitecture"
+    lint {
+        baseline = file("lint-baseline.xml")
+        checkReleaseBuilds = false
+        ignoreTestSources = true
+        abortOnError = true
     }
 }
 

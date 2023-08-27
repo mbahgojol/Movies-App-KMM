@@ -6,7 +6,7 @@
 
     <application
         android:allowBackup="true"
-        android:name=".AndroidApplication"
+        android:name="com.mbahgojol.movies.AndroidApplication"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
@@ -16,7 +16,7 @@
         android:theme="@style/Theme.CleanArchitectureMbahGojol"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name="com.mbahgojol.movies.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.CleanArchitectureMbahGojol">

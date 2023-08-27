@@ -1,4 +1,4 @@
-package com.mbahgojol.myapplication
+package com.mbahgojol.movies
 
 import platform.UIKit.UIDevice
 

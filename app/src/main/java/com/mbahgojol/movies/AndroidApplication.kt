@@ -1,4 +1,4 @@
-package com.mbahgojol.cleanarchitecture
+package com.mbahgojol.movies
 
 import android.app.Application
 

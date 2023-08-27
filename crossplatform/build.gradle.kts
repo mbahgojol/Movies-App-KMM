@@ -7,8 +7,6 @@ import com.mbahgojol.convention.commonTest
 plugins {
     id("mbahgojol.kotlin.multiplatform")
     kotlin("native.cocoapods")
-    id("mbahgojol.android.library")
-    alias(libs.plugins.realm) apply false
     alias(libs.plugins.ksp)
 }
 
@@ -26,17 +24,9 @@ kotlin {
 
     commonMain {
         dependencies {
-            // database
-            implementation(libs.realm.base)
-            implementation(libs.realm.sync)
-
-            // core
-            api(projects.shared.base)
-            api(projects.shared.models)
-
-            // features
-//            api(projects.shared.designsystem)
-//            api(projects.features.home)
+//            api(projects.shared.base)
+//            api(projects.shared.models)
+            api(projects.core)
         }
     }
 
@@ -45,10 +35,6 @@ kotlin {
             implementation(kotlin("test"))
         }
     }
-}
-
-android {
-    namespace = "com.mbahgojol.crossplatform"
 }
 
 ksp {

@@ -33,10 +33,6 @@ gradlePlugin {
             id = "mbahgojol.android.test"
             implementationClass = "AndroidTestConventionPlugin"
         }
-        register("androidKtor") {
-            id = "mbahgojol.android.ktor"
-            implementationClass = "AndroidKtorConventionPlugin"
-        }
         register("androidLibraryJacoco") {
             id = "mbahgojol.android.library.jacoco"
             implementationClass = "AndroidLibraryJacocoConventionPlugin"
@@ -48,14 +44,6 @@ gradlePlugin {
         register("androidFlavors") {
             id = "mbahgojol.android.application.flavors"
             implementationClass = "AndroidApplicationFlavorsConventionPlugin"
-        }
-        register("androidFirebase") {
-            id = "mbahgojol.android.application.firebase"
-            implementationClass = "AndroidApplicationFirebaseConventionPlugin"
-        }
-        register("androidHilt") {
-            id = "mbahgojol.android.hilt"
-            implementationClass = "AndroidHiltConventionPlugin"
         }
         register("androidApplication") {
             id = "mbahgojol.android.application"

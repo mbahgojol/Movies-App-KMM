@@ -1,6 +1,8 @@
 @file:Suppress("unused")
 
+import com.android.build.gradle.LibraryExtension
 import com.mbahgojol.convention.configureKotlin
+import org.gradle.api.Action
 import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -16,16 +18,19 @@ import org.jetbrains.kotlin.gradle.plugin.KotlinPlatformType
 class KotlinMultiplatformConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) = with(target) {
         with(pluginManager) {
+            apply("mbahgojol.android.library")
             apply("org.jetbrains.kotlin.multiplatform")
         }
 
         extensions.configure<KotlinMultiplatformExtension> {
             targetHierarchy.default()
 
-            android {
-                compilations.all {
-                    kotlinOptions {
-                        jvmTarget = JavaVersion.VERSION_11.toString()
+            if (pluginManager.hasPlugin("com.android.library")) {
+                android {
+                    compilations.all {
+                        kotlinOptions {
+                            jvmTarget = JavaVersion.VERSION_11.toString()
+                        }
                     }
                 }
             }
@@ -35,6 +40,10 @@ class KotlinMultiplatformConventionPlugin : Plugin<Project> {
             iosSimulatorArm64()
 
             configureKotlin()
+        }
+
+        androidExt {
+            namespace = "com.mbahgojol.${this@with.name}"
         }
     }
 }
@@ -62,3 +71,6 @@ private fun Project.addKspDependencyForAllTargets(
         }
     }
 }
+
+fun Project.androidExt(configure: Action<LibraryExtension>): Unit =
+    (this as org.gradle.api.plugins.ExtensionAware).extensions.configure("android", configure)

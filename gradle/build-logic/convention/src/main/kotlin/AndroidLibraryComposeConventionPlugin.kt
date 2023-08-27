@@ -11,7 +11,6 @@ class AndroidLibraryComposeConventionPlugin : Plugin<Project> {
         with(target) {
             with(pluginManager) {
                 apply("com.android.library")
-//                apply("org.jetbrains.compose")
             }
 
             val extension = extensions.getByType<LibraryExtension>()

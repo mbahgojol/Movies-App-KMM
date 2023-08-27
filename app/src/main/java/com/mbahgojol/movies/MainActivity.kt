@@ -1,4 +1,4 @@
-package com.mbahgojol.cleanarchitecture
+package com.mbahgojol.movies
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity

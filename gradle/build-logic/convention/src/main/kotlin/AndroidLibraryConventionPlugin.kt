@@ -5,11 +5,9 @@ import com.mbahgojol.convention.configureAndroid
 import com.mbahgojol.convention.configureBuildTypes
 import com.mbahgojol.convention.configureDefaultConfig
 import com.mbahgojol.convention.configureFlavors
-import com.mbahgojol.convention.libsExt
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
-import org.gradle.kotlin.dsl.dependencies
 
 class AndroidLibraryConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
@@ -24,14 +22,6 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
                 configureDefaultConfig(this)
                 configureBuildTypes(this)
                 configureFlavors(this)
-
-                if (!pluginManager.hasPlugin("org.jetbrains.kotlin.multiplatform")) {
-                    dependencies {
-                        add("implementation", libsExt.findLibrary("androidx.core").get())
-                        add("implementation", libsExt.findLibrary("androidx.appcompat").get())
-                        add("implementation", libsExt.findLibrary("google.android.material").get())
-                    }
-                }
             }
         }
     }
