@@ -19,14 +19,21 @@ kotlin {
         this.podfile = project.file("../iosApp/Podfile")
         framework {
             baseName = "crossplatform"
+
+            export(projects.core.models)
+            export(projects.core.data)
+            export(projects.core.domain)
+            export(projects.core.network)
         }
     }
 
     commonMain {
         dependencies {
             api(projects.shared.base)
-            api(projects.shared.models)
-            api(projects.core)
+            api(projects.core.models)
+            api(projects.core.data)
+            api(projects.core.domain)
+            api(projects.core.network)
         }
     }
 

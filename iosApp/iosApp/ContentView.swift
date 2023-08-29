@@ -2,15 +2,32 @@ import SwiftUI
 import crossplatform
 
 struct ContentView: View {
-	let greet = Greeting().greet()
+    @ObservedObject private(set) var viewModel: ViewModel
+    
+    var body: some View {
+        Text(viewModel.text)
+    }
+}
 
-	var body: some View {
-		Text(greet)
-	}
+extension ContentView {
+    class ViewModel: ObservableObject {
+        @Published var text = "Loading..."
+        init() {
+            KtorRepository().ktorDocs { greeting, error in
+                DispatchQueue.main.async {
+                    if let greeting = greeting {
+                        self.text = greeting
+                    } else {
+                        self.text = error?.localizedDescription ?? "error"
+                    }
+                }
+            }
+        }
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {
-	static var previews: some View {
-		ContentView()
-	}
+    static var previews: some View {
+        ContentView(viewModel: ContentView.ViewModel())
+    }
 }

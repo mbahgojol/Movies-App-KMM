@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package com.mbahgojol.movies
 
 class Greeting {
