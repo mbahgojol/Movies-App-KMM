@@ -34,6 +34,7 @@ kotlin {
             api(projects.features.home.models)
             api(projects.features.home.data)
             api(projects.features.home.domain)
+            api(projects.features.home.ui)
         }
     }
 

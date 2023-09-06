@@ -12,6 +12,7 @@ android {
 dependencies {
     implementation(projects.features.home.models)
     implementation(projects.features.home.domain)
+    implementation(projects.features.home.data)
 
     implementation(libs.androidx.core)
     implementation(libs.androidx.appcompat)

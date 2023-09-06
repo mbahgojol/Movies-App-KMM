@@ -34,8 +34,6 @@ dependencies {
     implementation(libs.kotlininject.runtime)
     ksp(libs.kotlininject.compiler)
 
-    implementation(projects.features.home.ui)
-
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.junit)
     androidTestImplementation(libs.androidx.test.espresso)
