@@ -4,7 +4,6 @@ import com.mbahgojol.convention.iosMain
 
 plugins {
     id("mbahgojol.kotlin.multiplatform")
-    alias(libs.plugins.realm) apply false
 }
 
 kotlin {
@@ -16,9 +15,6 @@ kotlin {
 
     commonMain {
         dependencies {
-            implementation(libs.realm.base)
-            implementation(libs.realm.sync)
-
             implementation(libs.ktor.client.core)
             implementation(projects.core.base)
             implementation(libs.kotlininject.runtime)

@@ -20,20 +20,20 @@ kotlin {
         framework {
             baseName = "crossplatform"
 
-            export(projects.core.models)
-            export(projects.core.data)
-            export(projects.core.domain)
+            export(projects.features.home.models)
+            export(projects.features.home.data)
+            export(projects.features.home.domain)
             export(projects.core.network)
         }
     }
 
     commonMain {
         dependencies {
-            api(projects.shared.base)
-            api(projects.core.models)
-            api(projects.core.data)
-            api(projects.core.domain)
+            api(projects.core.base)
             api(projects.core.network)
+            api(projects.features.home.models)
+            api(projects.features.home.data)
+            api(projects.features.home.domain)
         }
     }
 

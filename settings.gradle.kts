@@ -17,15 +17,18 @@ dependencyResolutionManagement {
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 rootProject.name = "Movies-App-KMM"
-include (":app")
+include(":app")
 include(":crossplatform")
-include(":features")
-include(":features:home")
-include(":shared")
-include(":shared:designsystem")
-include(":core")
-include(":shared:base")
-include(":core:models")
-include(":core:domain")
-include(":core:data")
-include(":core:network")
+
+include(
+    ":core:base",
+    ":core:designsystem",
+    ":core:network",
+)
+
+include(
+    ":features:home:ui",
+    ":features:home:models",
+    ":features:home:domain",
+    ":features:home:data",
+)
