@@ -26,9 +26,9 @@ include(
     ":core:network",
 )
 
-include(
-    ":features:home:ui",
-    ":features:home:models",
-    ":features:home:domain",
-    ":features:home:data",
-)
+include(":data")
+include(":domain")
+include(":ui")
+include(":ui:dashboard")
+include(":data:movies")
+include(":data:models")

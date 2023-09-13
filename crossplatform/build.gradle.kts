@@ -1,5 +1,6 @@
 @file:Suppress("unused")
 
+import com.mbahgojol.convention.androidMain
 import com.mbahgojol.convention.cocoapods
 import com.mbahgojol.convention.commonMain
 import com.mbahgojol.convention.commonTest
@@ -20,10 +21,8 @@ kotlin {
         framework {
             baseName = "crossplatform"
 
-            export(projects.features.home.models)
-            export(projects.features.home.data)
-            export(projects.features.home.domain)
-            export(projects.core.network)
+            export(projects.data.models)
+            export(projects.domain)
         }
     }
 
@@ -31,10 +30,15 @@ kotlin {
         dependencies {
             api(projects.core.base)
             api(projects.core.network)
-            api(projects.features.home.models)
-            api(projects.features.home.data)
-            api(projects.features.home.domain)
-            api(projects.features.home.ui)
+            api(projects.data.models)
+            api(projects.data.movies)
+            api(projects.domain)
+        }
+    }
+
+    androidMain {
+        dependencies {
+            api(projects.ui.dashboard)
         }
     }
 

@@ -9,8 +9,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import com.mbahgojol.base.inject.ActivityScope
-import com.mbahgojol.data.MoviesRepository
-import com.mbahgojol.home.ui.HomeScreen
+import com.mbahgojol.dashboard.HomeScreen
 import com.mbahgojol.movies.di.ActivityComponent
 import com.mbahgojol.movies.di.AndroidApplicationComponent
 import me.tatarka.inject.annotations.Component

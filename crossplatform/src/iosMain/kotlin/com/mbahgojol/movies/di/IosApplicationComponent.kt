@@ -5,4 +5,6 @@ import me.tatarka.inject.annotations.Component
 
 @Component
 @ApplicationScope
-abstract class IosApplicationComponent : SharedApplicationComponent
+abstract class IosApplicationComponent : SharedApplicationComponent {
+    companion object
+}

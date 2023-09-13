@@ -43,7 +43,7 @@ class KotlinMultiplatformConventionPlugin : Plugin<Project> {
         }
 
         androidExt {
-            namespace = "com.mbahgojol.${this@with.name}"
+            namespace = "com.mbahgojol${this@with.path.replace(":", ".")}"
         }
     }
 }
