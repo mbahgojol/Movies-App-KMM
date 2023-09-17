@@ -23,7 +23,7 @@ include(":crossplatform")
 include(
     ":core:base",
     ":core:designsystem",
-    ":core:network",
+    ":core:database",
 )
 
 include(":data")

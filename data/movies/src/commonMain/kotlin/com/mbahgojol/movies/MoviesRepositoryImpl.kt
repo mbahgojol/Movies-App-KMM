@@ -6,6 +6,7 @@ import io.ktor.client.request.get
 import io.ktor.client.statement.bodyAsText
 import me.tatarka.inject.annotations.Inject
 
+//TODO Inject datasource here
 @Inject
 class MoviesRepositoryImpl : MoviesRepository {
     private val client = HttpClient()

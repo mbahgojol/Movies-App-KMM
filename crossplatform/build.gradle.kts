@@ -29,7 +29,7 @@ kotlin {
     commonMain {
         dependencies {
             api(projects.core.base)
-            api(projects.core.network)
+            api(projects.core.database)
             api(projects.data.models)
             api(projects.data.movies)
             api(projects.domain)

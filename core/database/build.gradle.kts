@@ -1,6 +1,4 @@
-import com.mbahgojol.convention.androidMain
 import com.mbahgojol.convention.commonMain
-import com.mbahgojol.convention.iosMain
 
 plugins {
     id("mbahgojol.kotlin.multiplatform")
@@ -8,26 +6,13 @@ plugins {
 }
 
 kotlin {
-    androidMain {
-        dependencies {
-            implementation(libs.ktor.client.okhttp)
-        }
-    }
-
     commonMain {
         dependencies {
             implementation(libs.realm.base)
             implementation(libs.realm.sync)
 
-            implementation(libs.ktor.client.core)
             implementation(projects.core.base)
             implementation(libs.kotlininject.runtime)
-        }
-    }
-
-    iosMain {
-        dependencies {
-            implementation(libs.ktor.client.darwin)
         }
     }
 }
