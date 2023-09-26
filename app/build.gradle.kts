@@ -27,7 +27,7 @@ android {
 }
 
 dependencies {
-//    implementation(projects.crossplatform)
+    implementation(projects.crossplatform)
 
     implementation(compose.foundation)
     implementation(compose.material)
@@ -40,7 +40,7 @@ dependencies {
     implementation(libs.kotlininject.runtime)
     ksp(libs.kotlininject.compiler)
 
-    /*testImplementation(libs.junit)
+    testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.junit)
-    androidTestImplementation(libs.androidx.test.espresso)*/
+    androidTestImplementation(libs.androidx.test.espresso)
 }

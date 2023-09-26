@@ -8,7 +8,7 @@ import com.mbahgojol.convention.commonTest
 plugins {
     id("mbahgojol.kotlin.multiplatform")
     kotlin("native.cocoapods")
-//    alias(libs.plugins.ksp)
+    alias(libs.plugins.ksp)
 }
 
 kotlin {
@@ -21,24 +21,24 @@ kotlin {
         framework {
             baseName = "crossplatform"
 
-//            export(projects.data.models)
-//            export(projects.domain)
+            export(projects.data.models)
+            export(projects.domain)
         }
     }
 
     commonMain {
         dependencies {
-//            api(projects.core.base)
-//            api(projects.core.database)
-//            api(projects.data.models)
-//            api(projects.data.movies)
-//            api(projects.domain)
+            api(projects.core.base)
+            api(projects.core.database)
+            api(projects.data.models)
+            api(projects.data.movies)
+            api(projects.domain)
         }
     }
 
     androidMain {
         dependencies {
-//            api(projects.ui.dashboard)
+            api(projects.ui.dashboard)
         }
     }
 
@@ -49,8 +49,8 @@ kotlin {
     }
 }
 
-/*ksp {
+ksp {
     arg("me.tatarka.inject.generateCompanionExtensions", "true")
 }
 
-addKspDependencyForAllTargets(libs.kotlininject.compiler)*/
+addKspDependencyForAllTargets(libs.kotlininject.compiler)

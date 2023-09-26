@@ -1,6 +1,6 @@
 package com.mbahgojol.movies.di
 
-/*import android.content.Context
+import android.content.Context
 import com.mbahgojol.base.inject.ApplicationScope
 import com.mbahgojol.movies.AndroidApplication
 import me.tatarka.inject.annotations.Component
@@ -13,4 +13,4 @@ abstract class AndroidApplicationComponent : SharedApplicationComponent {
             return (context.applicationContext as AndroidApplication).component
         }
     }
-}*/
+}

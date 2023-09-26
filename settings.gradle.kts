@@ -24,9 +24,9 @@ enableFeaturePreview("STABLE_CONFIGURATION_CACHE")
 
 rootProject.name = "Movies-App-KMM"
 include(":app")
-//include(":crossplatform")
+include(":crossplatform")
 
-/*include(
+include(
     ":core:base",
     ":core:designsystem",
     ":core:database",
@@ -37,4 +37,4 @@ include(":domain")
 include(":ui")
 include(":ui:dashboard")
 include(":data:movies")
-include(":data:models")*/
+include(":data:models")

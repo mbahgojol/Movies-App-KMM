@@ -1,5 +1,5 @@
 plugins {
-    id("mbahgojol.android.library")
+    id("mbahgojol.library")
     id("mbahgojol.kotlin.android")
 }
 
