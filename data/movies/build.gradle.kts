@@ -17,7 +17,6 @@ kotlin {
         dependencies {
             implementation(libs.ktor.client.core)
             implementation(projects.core.base)
-            implementation(libs.kotlininject.runtime)
         }
     }
 

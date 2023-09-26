@@ -77,10 +77,6 @@ internal fun Project.configureBuildTypes(extension: LibraryExtension) {
         buildTypes {
             release {
                 isMinifyEnabled = true
-                proguardFiles(
-                    getDefaultProguardFile("proguard-android-optimize.txt"),
-                    "proguard-rules.pro"
-                )
             }
         }
     }
@@ -109,7 +105,6 @@ internal fun Project.configureDefaultConfig(extension: LibraryExtension) {
             minSdk = libsExt.minSdkVersion
 
             testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-            consumerProguardFiles("consumer-rules.pro")
             vectorDrawables {
                 useSupportLibrary = true
             }
