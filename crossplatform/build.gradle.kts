@@ -21,8 +21,8 @@ kotlin {
         framework {
             baseName = "crossplatform"
 
-            export(projects.data.models)
-            export(projects.domain)
+//            export(projects.data.models)
+//            export(projects.domain)
         }
     }
 

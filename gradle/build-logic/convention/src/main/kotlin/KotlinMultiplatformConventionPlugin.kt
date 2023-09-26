@@ -26,13 +26,7 @@ class KotlinMultiplatformConventionPlugin : Plugin<Project> {
             targetHierarchy.default()
 
             if (pluginManager.hasPlugin("com.android.library")) {
-                android {
-                    compilations.all {
-                        kotlinOptions {
-                            jvmTarget = JavaVersion.VERSION_17.toString()
-                        }
-                    }
-                }
+                androidTarget()
             }
 
             iosX64()
