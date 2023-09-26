@@ -10,6 +10,9 @@ circuit = "0.15.0"
 compose-multiplatform = "1.5.1"
 coroutines = "1.7.3"
 debugdrawer = "0.9.8"
+# current compose compiler is 1.4.7 check in ComposeMultiplatformConventionPlugin
+# KSP, Kotlin, and compose compiler for kmm currently not support for kotlin version 1.9.0 or heighers
+# so this is my PR for fixing that
 ksp = "1.8.21-1.0.11"
 kotlin = "1.8.21"
 kotlininject = "0.6.1"
