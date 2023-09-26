@@ -1,10 +1,9 @@
 @file:Suppress("UnstableApiUsage")
 
 plugins {
-    id("mbahgojol.android.application")
+    id("mbahgojol.application")
     id("mbahgojol.kotlin.android")
-    id("mbahgojol.android.application.compose")
-    id("mbahgojol.android.application.flavors")
+    id("mbahgojol.library.compose")
     alias(libs.plugins.ksp)
 }
 
@@ -28,17 +27,20 @@ android {
 }
 
 dependencies {
-    implementation(projects.crossplatform)
-    implementation(libs.androidx.navigation.runtime.ktx)
-    implementation(libs.androidx.navigation.compose)
+//    implementation(projects.crossplatform)
+
+    implementation(compose.foundation)
+    implementation(compose.material)
+    implementation(compose.material3)
+
+    implementation(libs.kotlin.coroutines.android)
+    implementation(libs.androidx.activity.activity)
+    implementation(libs.androidx.activity.compose)
+
     implementation(libs.kotlininject.runtime)
     ksp(libs.kotlininject.compiler)
 
-    testImplementation(libs.junit)
+    /*testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.junit)
-    androidTestImplementation(libs.androidx.test.espresso)
-    androidTestImplementation(platform(libs.compose.bom))
-    androidTestImplementation(libs.compose.ui.test)
-    debugImplementation(libs.compose.ui.tooling)
-    debugImplementation(libs.compose.ui.test.manifest)
+    androidTestImplementation(libs.androidx.test.espresso)*/
 }

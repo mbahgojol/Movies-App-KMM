@@ -8,31 +8,31 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
-import com.mbahgojol.base.inject.ActivityScope
-import com.mbahgojol.dashboard.HomeScreen
-import com.mbahgojol.movies.di.ActivityComponent
-import com.mbahgojol.movies.di.AndroidApplicationComponent
+/*import com.mbahgojol.base.inject.ActivityScope
+import com.mbahgojol.dashboard.HomeScreen*/
+/*import com.mbahgojol.movies.di.ActivityComponent
+import com.mbahgojol.movies.di.AndroidApplicationComponent*/
 import me.tatarka.inject.annotations.Component
 import me.tatarka.inject.annotations.Provides
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val component = MainActivityComponent::class.create(this)
+//        val component = MainActivityComponent::class.create(this)
         setContent {
             MaterialTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background,
                 ) {
-                    component.homeScreen(component.repo)
+//                    component.homeScreen(component.repo)
                 }
             }
         }
     }
 }
 
-@ActivityScope
+/*@ActivityScope
 @Component
 abstract class MainActivityComponent(
     @get:Provides override val activity: Activity,
@@ -42,4 +42,4 @@ abstract class MainActivityComponent(
 ) : ActivityComponent {
     abstract val repo: MoviesRepository
     abstract val homeScreen: HomeScreen
-}
+}*/
