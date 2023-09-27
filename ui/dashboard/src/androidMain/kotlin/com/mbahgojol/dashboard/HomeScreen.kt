@@ -8,7 +8,6 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
-import androidx.compose.ui.tooling.preview.Preview
 import com.mbahgojol.movies.MoviesRepository
 import kotlinx.coroutines.launch
 import me.tatarka.inject.annotations.Inject
@@ -30,10 +29,4 @@ fun HomeScreen(repository: MoviesRepository) {
         }
     }
     Text(text = text)
-}
-
-@Preview(showBackground = true)
-@Composable
-private fun Preview() {
-
 }

@@ -9,12 +9,18 @@ pluginManagement {
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
-        google()
         mavenCentral()
+        google()
+        mavenLocal()
+
+        // Prerelease versions of Compose Multiplatform
+        maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
     }
 }
 
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+// https://docs.gradle.org/7.6/userguide/configuration_cache.html#config_cache:stable
+enableFeaturePreview("STABLE_CONFIGURATION_CACHE")
 
 rootProject.name = "Movies-App-KMM"
 include(":app")

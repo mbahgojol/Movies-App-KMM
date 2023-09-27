@@ -18,7 +18,7 @@ import org.jetbrains.kotlin.gradle.plugin.KotlinPlatformType
 class KotlinMultiplatformConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) = with(target) {
         with(pluginManager) {
-            apply("mbahgojol.android.library")
+            apply("mbahgojol.library")
             apply("org.jetbrains.kotlin.multiplatform")
         }
 
@@ -26,13 +26,7 @@ class KotlinMultiplatformConventionPlugin : Plugin<Project> {
             targetHierarchy.default()
 
             if (pluginManager.hasPlugin("com.android.library")) {
-                android {
-                    compilations.all {
-                        kotlinOptions {
-                            jvmTarget = JavaVersion.VERSION_11.toString()
-                        }
-                    }
-                }
+                androidTarget()
             }
 
             iosX64()

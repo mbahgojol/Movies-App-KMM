@@ -8,9 +8,10 @@ import org.gradle.kotlin.dsl.configure
 fun Project.configureJava() {
     java {
         toolchain {
-            languageVersion.set(JavaLanguageVersion.of(11))
+            languageVersion.set(JavaLanguageVersion.of(17))
         }
     }
 }
 
-private fun Project.java(action: JavaPluginExtension.() -> Unit) = extensions.configure(action)
+private fun Project.java(action: JavaPluginExtension.() -> Unit) =
+    extensions.configure(action)

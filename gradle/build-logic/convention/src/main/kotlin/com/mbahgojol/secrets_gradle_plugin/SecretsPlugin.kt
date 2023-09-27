@@ -3,10 +3,10 @@
 package com.mbahgojol.secrets_gradle_plugin
 
 import com.android.build.api.variant.Variant
-import org.gradle.api.Plugin
-import org.gradle.api.Project
 import java.io.FileNotFoundException
 import java.util.Properties
+import org.gradle.api.Plugin
+import org.gradle.api.Project
 
 class SecretsPlugin : Plugin<Project> {
 
@@ -14,7 +14,7 @@ class SecretsPlugin : Plugin<Project> {
 
     override fun apply(project: Project) {
         val extension = project.extensions.create(
-            extensionName, SecretsPluginExtension::class.java
+            extensionName, SecretsPluginExtension::class.java,
         )
         val supportedComponents =
             listOf(project.androidAppComponent(), project.androidLibraryComponent())
@@ -26,7 +26,7 @@ class SecretsPlugin : Plugin<Project> {
 
                 val properties: Properties? = try {
                     project.rootProject.loadPropertiesFile(
-                        extension.propertiesFileName
+                        extension.propertiesFileName,
                     )
                 } catch (e: FileNotFoundException) {
                     defaultProperties ?: throw e
@@ -41,7 +41,7 @@ class SecretsPlugin : Plugin<Project> {
         extension: SecretsPluginExtension,
         defaultProperties: Properties?,
         properties: Properties?,
-        variant: Variant
+        variant: Variant,
     ) {
         // Inject defaults first
         defaultProperties?.let {

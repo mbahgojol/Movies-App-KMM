@@ -9,9 +9,9 @@ import com.android.build.api.variant.Variant
 import com.android.build.gradle.AppExtension
 import com.android.build.gradle.LibraryExtension
 import com.android.build.gradle.internal.core.InternalBaseVariant
-import org.gradle.api.Project
 import java.io.FileNotFoundException
 import java.util.Properties
+import org.gradle.api.Project
 
 fun Project.androidAppComponent(): ApplicationAndroidComponentsExtension? =
     extensions.findByType(ApplicationAndroidComponentsExtension::class.java)
@@ -19,8 +19,7 @@ fun Project.androidAppComponent(): ApplicationAndroidComponentsExtension? =
 fun Project.androidLibraryComponent(): LibraryAndroidComponentsExtension? =
     extensions.findByType(LibraryAndroidComponentsExtension::class.java)
 
-fun Project.androidProject(): AppExtension? =
-    extensions.findByType(AppExtension::class.java)
+fun Project.androidProject(): AppExtension? = extensions.findByType(AppExtension::class.java)
 
 fun Project.libraryProject(): LibraryExtension? =
     extensions.findByType(LibraryExtension::class.java)
@@ -30,7 +29,7 @@ fun Project.loadPropertiesFile(fileName: String): Properties {
     val propertiesFile = file(fileName)
     if (!propertiesFile.exists()) {
         throw FileNotFoundException(
-            "The file '${propertiesFile.absolutePath}' could not be found"
+            "The file '${propertiesFile.absolutePath}' could not be found",
         )
     }
 
@@ -53,7 +52,7 @@ fun Variant.inject(properties: Properties, ignore: List<String>) {
         val translatedKey = key.replace(javaVarRegexp, "")
         buildConfigFields.put(
             translatedKey,
-            BuildConfigField("String", value.addParenthesisIfNeeded(), null)
+            BuildConfigField("String", value.addParenthesisIfNeeded(), null),
         )
         manifestPlaceholders.put(translatedKey, value)
     }

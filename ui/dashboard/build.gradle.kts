@@ -2,7 +2,7 @@ import com.mbahgojol.convention.androidMain
 
 plugins {
     id("mbahgojol.kotlin.multiplatform")
-    id("mbahgojol.android.library.compose")
+    id("mbahgojol.library.compose")
 }
 
 kotlin {
@@ -13,10 +13,14 @@ kotlin {
             implementation(projects.data.movies)
 
             implementation(libs.androidx.core)
-            implementation(libs.androidx.appcompat)
-            implementation(libs.google.android.material)
-
             implementation(libs.kotlininject.runtime)
+
+            implementation(libs.androidx.activity.compose)
+            implementation(libs.compose.material3.windowsizeclass)
+            implementation(compose.foundation)
+            implementation(compose.material)
+            implementation(compose.material3)
+            implementation(compose.animation)
         }
     }
 }

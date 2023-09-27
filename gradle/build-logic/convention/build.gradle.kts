@@ -1,24 +1,19 @@
 plugins {
     `kotlin-dsl`
+    alias(libs.plugins.spotless)
 }
-
-group = "mbahgojol.buildlogic.convention"
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_17
-    targetCompatibility = JavaVersion.VERSION_17
-}
-tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
-    kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_17.toString()
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(17))
     }
 }
 
 dependencies {
     compileOnly(libs.android.gradlePlugin)
     compileOnly(libs.kotlin.gradlePlugin)
+    compileOnly(libs.spotless.gradlePlugin)
     compileOnly(libs.compose.gradlePlugin)
-    compileOnly(libs.ksp.gradlePlugin)
 }
 
 gradlePlugin {
@@ -29,49 +24,45 @@ gradlePlugin {
             displayName = PluginInfo.displayName
             description = PluginInfo.description
         }
+
         register("androidTest") {
-            id = "mbahgojol.android.test"
+            id = "mbahgojol.test"
             implementationClass = "AndroidTestConventionPlugin"
         }
+
         register("androidLibraryJacoco") {
-            id = "mbahgojol.android.library.jacoco"
+            id = "mbahgojol.library.jacoco"
             implementationClass = "AndroidLibraryJacocoConventionPlugin"
         }
+
         register("androidApplicationJacoco") {
-            id = "mbahgojol.android.application.jacoco"
+            id = "mbahgojol.application.jacoco"
             implementationClass = "AndroidApplicationJacocoConventionPlugin"
         }
-        register("androidFlavors") {
-            id = "mbahgojol.android.application.flavors"
-            implementationClass = "AndroidApplicationFlavorsConventionPlugin"
-        }
+
         register("androidApplication") {
-            id = "mbahgojol.android.application"
+            id = "mbahgojol.application"
             implementationClass = "AndroidApplicationConventionPlugin"
         }
-        register("androidApplicationCompose") {
-            id = "mbahgojol.android.application.compose"
-            implementationClass = "AndroidApplicationComposeConventionPlugin"
-        }
-        register("androidFeature") {
-            id = "mbahgojol.android.feature"
-            implementationClass = "AndroidFeatureConventionPlugin"
-        }
+
         register("androidLibrary") {
-            id = "mbahgojol.android.library"
+            id = "mbahgojol.library"
             implementationClass = "AndroidLibraryConventionPlugin"
         }
-        register("androidLibraryCompose") {
-            id = "mbahgojol.android.library.compose"
-            implementationClass = "AndroidLibraryComposeConventionPlugin"
-        }
+
         register("kotlinAndroid") {
             id = "mbahgojol.kotlin.android"
             implementationClass = "KotlinAndroidConventionPlugin"
         }
+
         register("kotlinMultiplatform") {
             id = "mbahgojol.kotlin.multiplatform"
             implementationClass = "KotlinMultiplatformConventionPlugin"
+        }
+
+        register("compose") {
+            id = "mbahgojol.library.compose"
+            implementationClass = "ComposeMultiplatformConventionPlugin"
         }
     }
 }
