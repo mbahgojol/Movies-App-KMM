@@ -21,6 +21,7 @@ val VersionCatalog.minSdkVersion get() = findVersion("androidMinSdk").get().toSt
 val VersionCatalog.targetSdkVersion get() = findVersion("androidTargetSdk").get().toString().toInt()
 val VersionCatalog.versionCode get() = findVersion("versionCode").get().toString().toInt()
 val VersionCatalog.versionName get() = findVersion("versionName").get().toString()
+val VersionCatalog.composeCompiler get() = findVersion("compose-compiler").get().toString()
 
 fun org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension.androidMain(block: KotlinSourceSet.() -> Unit) =
     sourceSets.getByName("androidMain", block)

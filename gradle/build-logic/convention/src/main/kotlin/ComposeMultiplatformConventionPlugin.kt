@@ -1,5 +1,7 @@
 @file:Suppress("unused")
 
+import com.mbahgojol.convention.composeCompiler
+import com.mbahgojol.convention.libsExt
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.getByType
@@ -14,6 +16,6 @@ class ComposeMultiplatformConventionPlugin : Plugin<Project> {
 
 fun Project.configureCompose() {
     with(extensions.getByType<ComposeExtension>()) {
-        kotlinCompilerPlugin.set("1.5.0")
+        kotlinCompilerPlugin.set(libsExt.composeCompiler)
     }
 }
