@@ -20,9 +20,11 @@ kotlin {
         this.podfile = project.file("../iosApp/Podfile")
         framework {
             baseName = "crossplatform"
+            isStatic = false
+            transitiveExport = true
 
-//            export(projects.data.models)
-//            export(projects.domain)
+            export(projects.data.models)
+            export(projects.domain)
         }
     }
 
