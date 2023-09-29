@@ -10,12 +10,12 @@ circuit = "0.15.0"
 # if you want to update kotlin version and compose compiler.
 # please consider the compose-multiplatform version to same version with at least compose compiler
 # by ghozi
-compose-multiplatform = "1.5.1"
-compose-compiler = "1.5.0"
+compose-multiplatform = "1.5.2"
+compose-compiler = "1.5.2"
 coroutines = "1.7.3"
 debugdrawer = "0.9.8"
-ksp = "1.9.0-1.0.13"
-kotlin = "1.9.0"
+ksp = "1.9.10-1.0.13"
+kotlin = "1.9.10"
 kotlininject = "0.6.3"
 ktlint = "0.49.1"
 lyricist = "1.4.2"
