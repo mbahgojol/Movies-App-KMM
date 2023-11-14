@@ -1,16 +1,16 @@
 [versions]
-agp = "8.1.1"
+agp = "8.1.3"
 androidMinSdk = "24"
 androidCompileSdk = "34"
 androidTargetSdk = "34"
 androidxlifecycle = "2.6.2"
-androidxactivity = "1.7.2"
+androidxactivity = "1.8.0"
 chucker = "4.0.0"
 circuit = "0.15.0"
 # if you want to update kotlin version and compose compiler.
 # please consider the compose-multiplatform version to same version with at least compose compiler
 # by ghozi
-compose-multiplatform = "1.5.2"
+compose-multiplatform = "1.5.3"
 compose-compiler = "1.5.2"
 coroutines = "1.7.3"
 debugdrawer = "0.9.8"
@@ -20,12 +20,12 @@ kotlininject = "0.6.3"
 ktlint = "0.49.1"
 lyricist = "1.4.2"
 multiplatformsettings = "1.0.0"
-okhttp = "4.11.0"
+okhttp = "4.12.0"
 kermit = "1.2.2" # Pinned back as Store uses Kermit 1.x
-ktor = "2.3.4"
+ktor = "2.3.5"
 paging-multiplatform = "3.2.0-alpha05-0.2.3"
 retrofit = "2.9.0"
-spotless = "6.21.0"
+spotless = "6.22.0"
 sqldelight = "2.0.0"
 licensee = "1.7.0"
 versionCode = "1"
@@ -54,7 +54,7 @@ androidx-activity-activity = { module = "androidx.activity:activity", version.re
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidxactivity" }
 androidx-archCoreTesting = "androidx.arch.core:core-testing:2.2.0"
 androidx-browser = "androidx.browser:browser:1.6.0"
-androidx-collection = "androidx.collection:collection:1.3.0-rc01"
+androidx-collection = "androidx.collection:collection:1.4.0-alpha02"
 androidx-core = "androidx.core:core-ktx:1.12.0"
 androidx-splashscreen = "androidx.core:core-splashscreen:1.0.1"
 
@@ -72,7 +72,7 @@ androidx-test-junit = "androidx.test.ext:junit-ktx:1.1.5"
 androidx-test-rules = "androidx.test:rules:1.5.0"
 androidx-test-runner = "androidx.test:runner:1.5.2"
 androidx-test-espresso = "androidx.test.espresso:espresso-core:3.5.1"
-androidx-benchmark-macro = "androidx.benchmark:benchmark-macro-junit4:1.2.0-rc01"
+androidx-benchmark-macro = "androidx.benchmark:benchmark-macro-junit4:1.2.0"
 androidx-uiautomator = "androidx.test.uiautomator:uiautomator:2.2.0"
 
 androidx-work-runtime = "androidx.work:work-runtime-ktx:2.8.1"
@@ -93,9 +93,9 @@ crashkios-crashlytics = "co.touchlab.crashkios:crashlytics:0.8.4"
 
 tools-desugarjdklibs = "com.android.tools:desugar_jdk_libs:2.0.3"
 
-google-firebase-analytics = "com.google.firebase:firebase-analytics-ktx:21.3.0"
-google-firebase-crashlytics = "com.google.firebase:firebase-crashlytics-ktx:18.4.3"
-google-firebase-perf = "com.google.firebase:firebase-perf-ktx:20.4.1"
+google-firebase-analytics = "com.google.firebase:firebase-analytics-ktx:21.4.0"
+google-firebase-crashlytics = "com.google.firebase:firebase-crashlytics-ktx:18.5.1"
+google-firebase-perf = "com.google.firebase:firebase-perf-ktx:20.5.0"
 
 imageloader = "io.github.qdsfdhvh:image-loader:1.6.7"
 
